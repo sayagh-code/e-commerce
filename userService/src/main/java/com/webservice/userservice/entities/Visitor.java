@@ -13,10 +13,10 @@ import lombok.ToString;
 public class Visitor {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String fullName;
+    private String username;
     private String email;
     private String phone;
     private String address;
     private String password;
-    private String type;
+    private String role;
 }

@@ -20,7 +20,12 @@ public class UserServiceApplication {
 		restConfiguration.exposeIdsFor(Visitor.class);
 		return args -> {
 			visitorRepository.save(new Visitor(null,"Sayagh Ilias","sayaghilias@gmail.com","0662100536","Al Azhar", "123","user"));
-			visitorRepository.save(new Visitor(null,"Echchihab Younes","younes863@hotmail.fr","0762100537","Maarif", "456","user"));
+			visitorRepository.save(new Visitor(null,"Echchihab Younes","younes863@hotmail.fr","0762100537","Maarif", "456","admin"));
+			visitorRepository.save(new Visitor(null,"admin","admin@hotmail.fr","0762100537","Maarif", "admin","admin"));
+			visitorRepository.save(new Visitor(null,"admin","admin@hotmail.fr","0762100537","Maarif", "admin","admin"));
+			visitorRepository.save(new Visitor(null,"admin","admin@hotmail.fr","0762100537","Maarif", "admin","admin"));
+			visitorRepository.save(new Visitor(null,"Lamsouber Houssam","hox@gmail.com","0662100537","Roche Noir", "789","user"));
+			visitorRepository.save(new Visitor(null,"El Aitouni Mohamed","younes863@hotmail.fr","0762100537","Maarif", "456","user"));
 		};
 	}
 }
