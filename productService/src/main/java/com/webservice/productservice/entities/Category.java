@@ -10,6 +10,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import java.util.Collection;
 import java.util.List;
 
 @Entity
@@ -22,5 +23,5 @@ public class Category {
     private String id;
     private String nameCat;
     @OneToMany(mappedBy = "category")
-    private List<Product> products;
+    private Collection<Product> products;
 }
