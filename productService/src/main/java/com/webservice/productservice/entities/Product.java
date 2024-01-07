@@ -14,7 +14,7 @@ public class Product {
     private String description;
     private double price;
     private int quantity;
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER)
     private Category category;
     private String image;
 }

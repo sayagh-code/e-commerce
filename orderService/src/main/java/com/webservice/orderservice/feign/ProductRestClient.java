@@ -11,5 +11,5 @@ public interface ProductRestClient {
     @GetMapping(path = "/products")
     PagedModel<Product> pageProducts();
     @GetMapping(path = "/products/{id}")
-    Product getProductById(@PathVariable Long id);
+    Product getProductById(@PathVariable String id);
 }

@@ -11,8 +11,8 @@ import lombok.ToString;
 
 @Entity @Data @AllArgsConstructor @NoArgsConstructor @ToString
 public class Visitor {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Id
+    private String id;
     private String username;
     private String email;
     private String phone;

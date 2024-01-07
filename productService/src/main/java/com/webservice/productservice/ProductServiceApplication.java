@@ -24,11 +24,11 @@ public class ProductServiceApplication {
         restConfiguration.exposeIdsFor(Product.class);
         restConfiguration.exposeIdsFor(Category.class);
         return args -> {
-            Category AllCat = categoryRepository.save(new Category(UUID.randomUUID().toString(),"All", null));
+            /*Category AllCat = categoryRepository.save(new Category(UUID.randomUUID().toString(),"All", null));
             Category categoryElec = categoryRepository.save(new Category(UUID.randomUUID().toString(),"electronics", null));
             Category categoryDrink = categoryRepository.save(new Category(UUID.randomUUID().toString(),"drinks", null));
             Category categoryCloth = categoryRepository.save(new Category(UUID.randomUUID().toString(),"cloths", null));
-            Category categoryMake = categoryRepository.save(new Category(UUID.randomUUID().toString(),"make up", null));
+            Category categoryMake = categoryRepository.save(new Category(UUID.randomUUID().toString(),"make up", null));*/
         };
     }
 

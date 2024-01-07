@@ -19,7 +19,7 @@ public class Bill {
     private Date orderDate;
     @OneToMany(mappedBy = "bill")
     private Collection<ProductItems> productItems;
-    private Long visitorID;
+    private String visitorID;
     @Transient
     private Visitor visitor;
 }

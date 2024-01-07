@@ -15,6 +15,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.hateoas.PagedModel;
 
+import java.util.Collections;
 import java.util.Date;
 import java.util.Random;
 
@@ -31,16 +32,20 @@ public class OrderServiceApplication {
                             VisitorRestClient visitorRestClient,
                             ProductRestClient productRestClient){
         return args -> {
-            Visitor visitor=visitorRestClient.getVisitorById(1L);
+            Visitor visitor=visitorRestClient.getVisitorById("e2f7da95-7db6-462e-8c3b-89e6b482f6ec");
             Bill bill = billRepository.save(new Bill(null, new Date(),null,visitor.getId(),null));
             PagedModel<Product> productPagedModel=productRestClient.pageProducts();
             productPagedModel.forEach(p->{
                 ProductItems productItems = new ProductItems();
                 productItems.setPrice(p.getPrice());
-                productItems.setQuantity(1 + new Random().nextInt(100));
+                productItems.setQuantity(1);
                 productItems.setBill(bill);
                 productItems.setProductID(p.getId());
                 productItemsRepository.save(productItems);
+                bill.setProductItems(Collections.singleton(productItems));
+            });
+            bill.getProductItems().forEach(productItems -> {
+                System.out.println(productItems.getPrice());
             });
         };
     }
