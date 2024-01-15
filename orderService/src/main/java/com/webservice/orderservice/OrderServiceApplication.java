@@ -32,7 +32,7 @@ public class OrderServiceApplication {
                             VisitorRestClient visitorRestClient,
                             ProductRestClient productRestClient){
         return args -> {
-            Visitor visitor=visitorRestClient.getVisitorById("e2f7da95-7db6-462e-8c3b-89e6b482f6ec");
+            /*Visitor visitor=visitorRestClient.getVisitorById("fbe9d747-7910-41ce-bb66-136d70745960");
             Bill bill = billRepository.save(new Bill(null, new Date(),null,visitor.getId(),null));
             PagedModel<Product> productPagedModel=productRestClient.pageProducts();
             productPagedModel.forEach(p->{
@@ -42,11 +42,7 @@ public class OrderServiceApplication {
                 productItems.setBill(bill);
                 productItems.setProductID(p.getId());
                 productItemsRepository.save(productItems);
-                bill.setProductItems(Collections.singleton(productItems));
-            });
-            bill.getProductItems().forEach(productItems -> {
-                System.out.println(productItems.getPrice());
-            });
+            });*/
         };
     }
 }

@@ -19,6 +19,5 @@ public class ProductItems {
     private Bill bill;
     @Transient
     private Product product;
-    @Transient
     private String productName;
 }
